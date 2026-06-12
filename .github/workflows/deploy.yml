@@ -1,0 +1,21 @@
+name: Build and deploy WIG scoreboard
+on:
+  push:
+    branches: [main]
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install build deps
+        run: |
+          sudo apt-get update && sudo apt-get install -y libreoffice
+          pip install openpyxl
+      - name: Build
+        run: make build
+      - name: Deploy to App Service
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: millionnat
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: dist
