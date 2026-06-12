@@ -1,0 +1,25 @@
+{
+  "mimeTypes": {
+    ".xlsx": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+  },
+  "routes": [
+    {
+      "route": "/tablero.xlsx",
+      "headers": {
+        "cache-control": "no-cache, no-store, must-revalidate"
+      }
+    },
+    {
+      "route": "/index.html",
+      "headers": {
+        "cache-control": "no-cache"
+      }
+    },
+    {
+      "route": "/marcador.html",
+      "headers": {
+        "cache-control": "no-cache"
+      }
+    }
+  ]
+}
