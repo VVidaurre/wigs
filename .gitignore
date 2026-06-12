@@ -3,5 +3,6 @@ node_modules/
 .context/
 .gstack/
 
-# Datos financieros internos — no publicar hasta que el sitio tenga login
-web/tablero.xlsx
+# Artefactos de demo regenerables (make demo)
+dist/demo.html
+dist/demo_data.xlsx
